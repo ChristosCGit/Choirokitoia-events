@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parking Place</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      --text-color: #1f2937;
+      --card-bg: rgba(255, 255, 255, 0.25);
+      --link-bg: rgba(255, 255, 255, 0.9);
+      --hover-bg: #4fd1c5;
+    }
+
+    body.dark {
+      --bg: linear-gradient(135deg, #1a1a1a, #333);
+      --text-color: #f1f1f1;
+      --card-bg: rgba(40, 40, 40, 0.7);
+      --link-bg: rgba(60, 60, 60, 0.9);
+      --hover-bg: #6ee7b7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      transition: background 0.5s ease;
+    }
+
+    .toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      background: var(--link-bg);
+      padding: 8px 14px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin: 10px 0;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    .link-container {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .parking-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      background-color: var(--link-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .parking-link:hover {
+      background-color: var(--hover-bg);
+      transform: translateY(-3px) scale(1.02);
+      color: white;
+    }
+
+    .map-preview {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+
+    .link-text {
+      flex: 1;
+      padding: 12px 16px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .link-text i {
+      font-size: 1.3rem;
+    }
+
+    select {
+      margin-top: 20px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .map-preview {
+        width: 80px;
+        height: 80px;
+      }
+
+      .link-text {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toggle" onclick="toggleDarkMode()">
+    🌙 <span id="toggle-label">Dark Mode</span>
+  </div>
+
+  <h1 id="main-title">Main Event Location</h1>
+  <h2 id="parking-title">Parking Places</h2>
+
+  <div class="link-container">
+    <a class="parking-link" href="https://maps.app.goo.gl/hYsv93o5aAoG4zSF7" target="_blank" rel="noopener noreferrer">
+      <img class="map-preview" src="https://maps.googleapis.com/maps/api/staticmap?center=40.748817,-73.985428&zoom=15&size=200x200&markers=color:red%7C40.748817,-73.985428&key=YOUR_API_KEY" alt="Parking 1">
+      <div class="link-text"><i class="fas fa-parking"></i> <span class="label" data-en="Parking 1" data-el="Χώρος Στάθμευσης 1">Parking 1</span></div>
+    </a>
+    <a class="parking-link" href="https://maps.app.goo.gl/RR8w5KD2VBTR6exY6" target="_blank" rel="noopener noreferrer">
+      <img class="map-preview" src="https://maps.googleapis.com/maps/api/staticmap?center=40.741895,-73.989308&zoom=15&size=200x200&markers=color:red%7C40.741895,-73.989308&key=YOUR_API_KEY" alt="Parking 2">
+      <div class="link-text"><i class="fas fa-parking"></i> <span class="label" data-en="Parking 2" data-el="Χώρος Στάθμευσης 2">Parking 2</span></div>
+    </a>
+    <a class="parking-link" href="https://maps.app.goo.gl/qskPBK8Y9TqwcfMr9" target="_blank" rel="noopener noreferrer">
+      <img class="map-preview" src="https://maps.googleapis.com/maps/api/staticmap?center=40.730610,-73.935242&zoom=15&size=200x200&markers=color:red%7C40.730610,-73.935242&key=YOUR_API_KEY" alt="Parking 3">
+      <div class="link-text"><i class="fas fa-parking"></i> <span class="label" data-en="Parking 3" data-el="Χώρος Στάθμευσης 3">Parking 3</span></div>
+    </a>
+  </div>
+
+  <select onchange="changeLanguage(this.value)">
+    <option value="en">🇬🇧 English</option>
+    <option value="el">🇬🇷 Ελληνικά</option>
+  </select>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+      document.getElementById('toggle-label').textContent =
+        document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+    }
+
+    function changeLanguage(lang) {
+      document.querySelectorAll('.label').forEach(el => {
+        el.textContent = el.dataset[lang];
+      });
+
+      document.getElementById('main-title').textContent =
+        lang === 'el' ? 'Κύρια Τοποθεσία Εκδήλωσης' : 'Main Event Location';
+
+      document.getElementById('parking-title').textContent =
+        lang === 'el' ? 'Χώροι Στάθμευσης' : 'Parking Places';
+    }
+  </script>
+</body>
+</html>
