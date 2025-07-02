@@ -23,6 +23,7 @@
       --hover-bg: #6ee7b7;
     }
 
+
     * {
       margin: 0;
       padding: 0;
@@ -125,6 +126,28 @@
       border-radius: 6px;
       font-size: 1rem;
     }
+.main-link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 14px 24px;
+  margin-bottom: 25px;
+  text-decoration: none;
+  background-color: var(--link-bg);
+  color: var(--text-color);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.main-link-button:hover {
+  background-color: var(--hover-bg);
+  color: #fff;
+  transform: translateY(-3px);
+}
 
     @media (max-width: 480px) {
       h1 {
@@ -151,7 +174,9 @@
     🌙 <span id="toggle-label">Dark Mode</span>
   </div>
 
-  <h1 id="main-title">Main Event Location</h1>
+  <button class="info-btn" onclick="alertInfo()">
+  <i class="fas fa-info-circle"></i> <span id="info-button-text">More Info</span>
+</button>
   <h2 id="parking-title">Parking Places</h2>
 
   <div class="link-container">
