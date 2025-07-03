@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pre‑Orders</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      --text-color: #1f2937;
+      --card-bg: rgba(255, 255, 255, 0.25);
+      --link-bg: rgba(255, 255, 255, 0.9);
+      --hover-bg: #4fd1c5;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 30px 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .link-container {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 480px;
+      width: 100%;
+      margin-bottom: 32px;
+    }
+
+    .city-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .parking-link {
+      background-color: var(--link-bg);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+    }
+
+    .parking-link:hover {
+      background-color: var(--hover-bg);
+      transform: translateY(-3px) scale(1.02);
+      color: white;
+    }
+
+    .link-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .back-button {
+      margin-top: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #1f2937;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--link-bg);
+      padding: 10px 18px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .back-button:hover {
+      background-color: var(--hover-bg);
+      color: white;
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+  <h2 id="preorder-title">Pre‑Orders</h2>
+
+  <!-- Choirokoitia -->
+  <div class="link-container">
+    <h3 class="city-title"><span class="label" data-en="Choirokoitia" data-el="Χοιροκοιτία">Choirokoitia</span></h3>
+
+    <a class="parking-link" href="https://maps.app.goo.gl/WeuQoKJRJhEPSX5m7" target="_blank" rel="noopener noreferrer">
+      <div class="link-text"><i class="fas fa-ticket"></i>
+        <span class="label" data-en="P.D.V. Shop & Delivery" data-el="P.D.V. Shop & Delivery">P.D.V. Shop & Delivery</span>
+      </div>
+    </a>
+    <a class="parking-link" href="https://maps.app.goo.gl/bQUXJZmSrHsYtoK99" target="_blank" rel="noopener noreferrer">
+      <div class="link-text"><i class="fas fa-ticket"></i>
+        <span class="label" data-en="Chirokitias Community Council Office" data-el="Γραφείο Κοινοτικού Συμβουλίου Χοιροκοιτίας">Chirokitia Community Council Office Chirokitia</span>
+      </div>
+    </a>
+    <a class="parking-link" href="#" target="_blank" rel="noopener noreferrer">
+      <div class="link-text"><i class="fas fa-ticket"></i>
+        <span class="label" data-en="Pre‑Order 3" data-el="Προκράτηση 3">Pre‑Order 3</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Nicosia -->
+  <div class="link-container">
+    <h3 class="city-title"><span class="label" data-en="Nicosia" data-el="Λευκωσία">Nicosia</span></h3>
+
+    <a class="parking-link" href="https://maps.app.goo.gl/tfQbNUExi69iBBbG6" target="_blank" rel="noopener noreferrer">
+      <div class="link-text"><i class="fas fa-ticket"></i>
+        <span class="label" data-en="Epiplatop Furniture Cy " data-el="Epiplatop Furniture Cy">Epiplatop Furniture Cy</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Larnaca -->
+  <div class="link-container">
+    <h3 class="city-title"><span class="label" data-en="Larnaca" data-el="Λάρνακα">Larnaca</span></h3>
+
+    <a class="parking-link" href="https://maps.app.goo.gl/zcGmHn1QgL7bn6dYA" target="_blank" rel="noopener noreferrer">
+      <div class="link-text"><i class="fas fa-ticket"></i>
+        <span class="label" data-en="Photo Kiss Larnaca" data-el="Photo Kiss Larnaca">Photo Kiss Larnaca</span>
+      </div>
+    </a>
+    <a class="parking-link" href="https://maps.app.goo.gl/2geqZexAjY77JbyYA" target="_blank" rel="noopener noreferrer">
+      <div class="link-text"><i class="fas fa-ticket"></i>
+        <span class="label" data-en="Coffee Berry Larnaca" data-el="Coffee Berry Larnaca">Coffee Berry Larnaca</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Limassol -->
+  <div class="link-container">
+    <h3 class="city-title"><span class="label" data-en="Limassol" data-el="Λεμεσός">Limassol</span></h3>
+
+    <a class="parking-link" href="https://maps.app.goo.gl/ggkYftLYtWCv8pGk9" target="_blank" rel="noopener noreferrer">
+      <div class="link-text"><i class="fas fa-ticket"></i>
+        <span class="label" data-en="Sweet Nest Patisserie" data-el="Sweet Nest Patisserie">Sweet Nest Patisserie</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Back button -->
+  <a href="index.html" class="back-button">
+    ← <span class="label" data-en="Back to Main" data-el="Πίσω στην Αρχική">Back to Main</span>
+  </a>
+
+  <script>
+    const lang = localStorage.getItem('lang') || 'en';
+    document.documentElement.lang = lang;
+
+    // Apply translations
+    document.querySelectorAll('.label').forEach(el => {
+      el.textContent = el.dataset[lang];
+    });
+
+    // Page title translation
+    document.getElementById('preorder-title').textContent =
+      lang === 'el' ? 'Προ‑Παραγγελίες' : 'Pre‑Orders';
+  </script>
+</body>
+</html>
