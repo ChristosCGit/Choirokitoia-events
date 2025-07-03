@@ -15,11 +15,7 @@
       --hover-bg: #4fd1c5;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -31,23 +27,18 @@
       justify-content: center;
       min-height: 100vh;
       padding: 20px;
-      transition: background 0.5s ease, color 0.5s ease;
       position: relative;
+    }
+
+    .language-switcher {
+      position: absolute;
+      top: 20px;
+      right: 20px;
     }
 
     h1, h2 {
       text-align: center;
-      margin: 10px 0;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    }
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      margin-bottom: 20px;
+       margin: 10px;
     }
 
     .link-container {
@@ -59,23 +50,21 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-      width: 100%;
       max-width: 480px;
+      width: 100%;
+      margin-top: 20px;
     }
 
     .parking-link {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      text-decoration: none;
       background-color: var(--link-bg);
       border-radius: 12px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 16px;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
       font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .parking-link:hover {
@@ -85,53 +74,35 @@
     }
 
     .link-text {
-      padding: 12px 16px;
-      font-size: 1.2rem;
-      font-weight: 500;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       gap: 10px;
-      text-align: center;
-    }
-
-    .link-text i {
-      font-size: 1.3rem;
     }
 
     select {
-      margin-top: 20px;
       padding: 10px 16px;
       border-radius: 6px;
-      font-size: 1rem;
     }
 
     @media (max-width: 480px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.2rem;
-      }
-
-      .link-text {
-        font-size: 1rem;
-      }
-
-      .parking-link {
-        padding: 14px;
-        font-size: 1rem;
-      }
+      .language-switcher select { font-size: 0.9rem; }
     }
   </style>
 </head>
 <body>
-  <h1 id="main-title">Main Event</h1>
+  <div class="language-switcher">
+    <select onchange="changeLanguage(this.value)" aria-label="Select language">
+      <option value="en">🇬🇧 English</option>
+      <option value="el">🇬🇷 Ελληνικά</option>
+    </select>
+  </div>
+
+  <h1 id="main-title">Melina Aslanidou Live</h1>
 
   <div class="link-container">
     <a class="parking-link" href="https://maps.app.goo.gl/ZxK2PPz1vNqNZBhm7" 
-       target="_blank" rel="noopener noreferrer" aria-label="Location link">
+       target="_blank" rel="noopener noreferrer">
       <div class="link-text">
         <i class="fas fa-parking"></i> 
         <span class="label" data-en="Location" data-el="Τοποθεσία">Location</span>
@@ -139,45 +110,39 @@
     </a>
   </div>
 
-  <h2 id="parking-title">Parking Places</h2>
-
   <div class="link-container">
-    <a class="parking-link" href="https://maps.app.goo.gl/PYJ7XyNxDhY7Pafc8" target="_blank" rel="noopener noreferrer">
-      <div class="link-text"><i class="fas fa-parking"></i> 
-        <span class="label" data-en="Parking 1" data-el="Χώρος Στάθμευσης 1">Parking 1</span>
+    <a class="parking-link" href="parking.html">
+      <div class="link-text">
+        <i class="fas fa-car-side"></i> 
+        <span class="label" data-en="View Parking Places" data-el="Δείτε τους Χώρους Στάθμευσης">View Parking Places</span>
       </div>
     </a>
-    <a class="parking-link" href="https://maps.app.goo.gl/QoyUdYGQagecTGRY8" target="_blank" rel="noopener noreferrer">
-      <div class="link-text"><i class="fas fa-parking"></i> 
-        <span class="label" data-en="Parking 2" data-el="Χώρος Στάθμευσης 2">Parking 2</span>
-      </div>
-    </a>
-    <a class="parking-link" href="https://maps.app.goo.gl/gadjLjC5mjbED6it5" target="_blank" rel="noopener noreferrer">
-      <div class="link-text"><i class="fas fa-parking"></i> 
-        <span class="label" data-en="Parking 3" data-el="Χώρος Στάθμευσης 3">Parking 3</span>
+  </div>
+  
+  <div class="link-container">
+    <a class="parking-link" href="preorder.html">
+      <div class="link-text">
+        <i class="fas fa-ticket"></i> 
+        <span class="label" data-en="Pre‑Orders Locations" data-el="Τοποθεσίες Προ‑Παραγγελίας">Preorder Locations</span>
       </div>
     </a>
   </div>
 
-  <select onchange="changeLanguage(this.value)" aria-label="Select language">
-    <option value="en">🇬🇧 English</option>
-    <option value="el">🇬🇷 Ελληνικά</option>
-  </select>
-
   <script>
     function changeLanguage(lang) {
+      localStorage.setItem('lang', lang);
       document.querySelectorAll('.label').forEach(el => {
         el.textContent = el.dataset[lang];
       });
-
       document.getElementById('main-title').textContent =
-        lang === 'el' ? 'Κύρια Εκδήλωση' : 'Main Event';
-
-      document.getElementById('parking-title').textContent =
-        lang === 'el' ? 'Χώροι Στάθμευσης' : 'Parking Places';
-
+        lang === 'el' ? 'Συναβλία Μελίνας Ασλανίδου ' : 'Melina Aslanidou Live';
       document.documentElement.lang = lang;
     }
+
+    // Load language preference
+    const savedLang = localStorage.getItem('lang') || 'en';
+    document.querySelector('select').value = savedLang;
+    changeLanguage(savedLang);
   </script>
 </body>
 </html>
