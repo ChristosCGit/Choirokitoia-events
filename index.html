@@ -15,14 +15,6 @@
       --hover-bg: #4fd1c5;
     }
 
-    body.dark {
-      --bg: linear-gradient(135deg, #1a1a1a, #333);
-      --text-color: #f1f1f1;
-      --card-bg: rgba(40, 40, 40, 0.7);
-      --link-bg: rgba(60, 60, 60, 0.9);
-      --hover-bg: #6ee7b7;
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -41,19 +33,6 @@
       padding: 20px;
       transition: background 0.5s ease, color 0.5s ease;
       position: relative;
-    }
-
-    .toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      background: var(--link-bg);
-      padding: 12px 18px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      transition: background 0.3s ease, color 0.3s ease;
     }
 
     h1, h2 {
@@ -127,33 +106,6 @@
       font-size: 1rem;
     }
 
-    .fb-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: var(--link-bg);
-      color: var(--text-color);
-      padding: 12px 16px;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-      font-size: 1rem;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      z-index: 1000;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    .fb-float:hover {
-      background: var(--hover-bg);
-      color: white;
-    }
-
-    .fb-float i {
-      font-size: 1.2rem;
-    }
-
     @media (max-width: 480px) {
       h1 {
         font-size: 2rem;
@@ -171,19 +123,10 @@
         padding: 14px;
         font-size: 1rem;
       }
-
-      .fb-float {
-        font-size: 0.9rem;
-        padding: 10px 14px;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="toggle" onclick="toggleDarkMode()" role="button" aria-label="Toggle dark mode">
-    🌙 <span id="toggle-label">Dark Mode</span>
-  </div>
-
   <h1 id="main-title">Main Event</h1>
 
   <div class="link-container">
@@ -221,22 +164,7 @@
     <option value="el">🇬🇷 Ελληνικά</option>
   </select>
 
-  <!-- Floating Facebook Link -->
-  <a href="https://www.facebook.com/profile.php?id=100012034547858" 
-     class="fb-float" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-facebook"></i>
-    <span class="fb-label" data-en="Follow Us on FB for upcoming event" data-el="Ακολουθήστε μας στο Facebook για την επερχόμενη εκδήλωση">
-      Follow Us on FB for upcoming event
-    </span>
-  </a>
-
   <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-      const isDark = document.body.classList.contains('dark');
-      document.getElementById('toggle-label').textContent = isDark ? 'Light Mode' : 'Dark Mode';
-    }
-
     function changeLanguage(lang) {
       document.querySelectorAll('.label').forEach(el => {
         el.textContent = el.dataset[lang];
@@ -247,11 +175,6 @@
 
       document.getElementById('parking-title').textContent =
         lang === 'el' ? 'Χώροι Στάθμευσης' : 'Parking Places';
-
-      document.querySelector('.fb-label').textContent =
-        lang === 'el'
-          ? 'Ακολουθήστε μας στο Facebook για την επερχόμενη εκδήλωση'
-          : 'Follow Us on FB for upcoming event';
 
       document.documentElement.lang = lang;
     }
