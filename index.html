@@ -31,8 +31,18 @@
     }
 
     .language-switcher {
+      margin-bottom: 10px;
+      align-self: center;
+    }
+    
+     .top-banner {
+      width: 90%;
+      height: auto;
+      max-height: auto;
+      object-fit: cover;
+      border-radius: 16px;
       margin-bottom: 20px;
-      align-self: flex-end;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
     
     h1{
@@ -105,14 +115,16 @@
   </style>
 </head>
 <body>
+  
+  <img src="topbanner.png" alt="Event Banner" class="top-banner" />
+  <!--<h1 id="main-title">Melina Aslanidou Live</h1>-->
+  
   <div class="language-switcher">
     <select onchange="changeLanguage(this.value)" aria-label="Select language">
       <option value="en">🇬🇧 English</option>
       <option value="el">🇬🇷 Ελληνικά</option>
     </select>
   </div>
-
-  <h1 id="main-title">Melina Aslanidou Live</h1>
 
   <div class="link-container">
     <a class="parking-link" href="https://maps.app.goo.gl/ZxK2PPz1vNqNZBhm7" 
